@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, input, textarea, button, select {
+  @apply font-saira italic;
+  font-weight: 200;
+}
+
+.round_1{
+    border-radius: 14px;
+}
+
+.width_1{
+    width: 70%;
+}
+
+.bmargin{
+    margin-bottom: 10px;
+}
