@@ -13,7 +13,7 @@ function HomePage() {
   return (
     <div className="min-h-screen bg-base-200 ">
       <div className="flex items-center justify-center pt-20 px-4">
-        <div className="bg-base-100 rounded-lg shadow-cl w-full max-w-6xl h-[calc(100vh-8rem)]">
+        <div className="bg-base-100 rounded-lg shadow-cl w-full max-w-5xl h-[calc(100vh-9rem)]">
           <div className="flex h-full rounded-lg overflow-hidden ">
             <div className={`${selectedUser? "hidden": "block"} sm:block w-full  sm:w-72 `} sm:w-10>
               <Sidebar />
