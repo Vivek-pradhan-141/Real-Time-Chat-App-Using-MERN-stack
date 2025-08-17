@@ -24,14 +24,14 @@ const Sidebar = () => {
   if (isUsersLoading) return <SidebarSkeleton />
 
   return (
-    <aside className="h-full w-20 lg:w-72 border-r border-base-300 flex flex-col transition-all duration-200  "  >
+    <aside className="h-full w-full lg:w-72 border-r border-base-300 flex flex-col transition-all duration-200  "  >
       <div className="border-b border-base-300 w-full p-5 ">
         <div className="flex items-center gap-2">
           <Users className="size-6" />
-          <span className="font-medium hidden lg:block text-base-content ">Contacts</span>
+          <span className="font-medium block text-base-content ">Contacts</span>
         </div>
         {/*  Online Filter Toggle */}
-        <div className="mt-3 hidden lg:flex items-center gap-2">
+        <div className="mt-3 flex items-center gap-2">
           <label className="cursor-pointer flex items-center gap-2">
             <input
               type="checkbox"
@@ -56,7 +56,7 @@ const Sidebar = () => {
             onClick={() => setSelectedUser(user)}
             className={`w-full p-3 flex items-center gap-3 hover:bg-base-300 transition-colors ${(selectedUser?._id === user._id) ? "bg-base-300 ring-1 ring-base-300" : ""}`}
           >
-            <div className="relative mx-auto lg:mx-0 ">
+            <div className="relative mx-0 ">
               <img
                 src={user.profilePic || "/avatar.svg"}
                 alt={user.name}
@@ -68,7 +68,7 @@ const Sidebar = () => {
             </div>
 
             {/* User info - Only Visible on Larger Screen */}
-            <div className="hidden lg:block text-left min-w-0 ">
+            <div className="block text-left min-w-0 ">
               <div className="font-medium truncate">{user.name}</div>
               <div className="text-sm text-zinc-400 ">
                 {onlineUsers.includes(user._id) ? "Online" : "Offline"}

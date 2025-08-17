@@ -5,12 +5,15 @@ import MessageInput from "./MessageInput.jsx";
 import MessageSkeleton from "./skeleons/MessageSkeleton.jsx";
 import { useAuthStore } from "../store/useAuthStore.js";
 import formatTime from "../lib/formatTime.js";
+import { useState } from "react";
 
 const ChatContainer = () => {
 
   const { messages, getMessages, isMessageLoading, selectedUser, subscribeToMessage, unsubscribeToMessage} = useChatStore();
   const { authUser } = useAuthStore();
   const bottomRef = useRef(null);
+
+
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -47,11 +50,11 @@ const ChatContainer = () => {
               </div>
             </div>
             <div className="chat-footer mb-1 ">
-              <time className="text-xs opacity-50 ml-1">
+              <time className="text-[11px] sm:text-sm opacity-70 ml-1">
                 {formatTime(message.createdAt)}
               </time>
             </div>
-            <div className="chat-bubble flex flex-col max-w-[50%]">
+            <div className="chat-bubble flex flex-col  w-fit max-w-[70%] md:max-w-[50%] ">
               {message.image && (
                 <img
                   src={message.image}
@@ -60,7 +63,7 @@ const ChatContainer = () => {
                 />
               )}
               {message.text && (
-                <p className="break-words whitespace-pre-wrap">
+                <p className="text-[10px] sm:text-sm break-words whitespace-pre-wrap  ">
                   {message.text}
                 </p>
               )}
